@@ -1,0 +1,70 @@
+# Project Update Guide (Bilingual - ইংরেজি + বাংলা)
+Project Name / প্রজেক্টের নাম: CareNexus AI Hospital Assistant  
+GitHub Repository / গিটহাব রেপোজিটরি: https://github.com/bashirnubtk/CareNexus-AI-Hospital-Assistant  
+Local Folder / লোকাল ফোল্ডার: C:\projects\Clinical_Assistant
+
+## Important Notes / গুরুত্বপূর্ণ নোটস
+- This is an open-source Django project with AI agent (Llama via OpenRouter) for hospital help.  
+  এটা একটা ওপেন-সোর্স ডিজ্যাঙ্গো প্রজেক্ট যেখানে AI এজেন্ট (Llama API দিয়ে) হাসপাতালের সাহায্য করে।
+- Features include doctor suggestions, blood donor search, role-based access.  
+  ফিচারগুলো: ডাক্তার সাজেশন, রক্তদাতা খোঁজা, রোল-ভিত্তিক অ্যাক্সেস।
+- All code, README, .gitignore are synced to GitHub.  
+  সব কোড, README, .gitignore গিটহাবে সিঙ্ক করা আছে।
+- Always pull latest changes before working.  
+  কাজ শুরু করার আগে সবসময় git pull করো।
+
+## How to Work or Update on Any Computer / যেকোনো কম্পিউটার থেকে কাজ বা আপডেট করার উপায়
+
+### Step 1: Install Software (Do once) / সফটওয়্যার ইনস্টল (একবার করলেই হবে)
+1. Python 3.10+ → https://www.python.org/downloads/ (Add to PATH টিক দাও)  
+   পাইথন ৩.১০ বা তার উপরে ইনস্টল করো (PATH-এ যোগ করো)।
+2. Git → https://git-scm.com/download/win  
+   গিট ইনস্টল করো।
+3. Visual Studio Code (recommended) → https://code.visualstudio.com/  
+   ভিএস কোড ইনস্টল করো (সাজেস্ট করা হচ্ছে)।
+
+### Step 2: Get the Project (First time or Update) / প্রজেক্ট ডাউনলোড বা আপডেট করো
+# First time - Clone করো
+git clone https://github.com/bashirnubtk/CareNexus-AI-Hospital-Assistant.git
+cd CareNexus-AI-Hospital-Assistant
+
+# Later - Update করো
+cd C:\projects\CareNexus-AI-Hospital-Assistant   # তোমার পাথ অনুযায়ী চেঞ্জ করো
+git pull origin main
+
+### Step 3: Setup Virtual Environment & Install / ভার্চুয়াল এনভায়রনমেন্ট তৈরি ও প্যাকেজ ইনস্টল
+python -m venv venv
+.\venv\Scripts\activate
+pip install django requests
+
+### Step 4: Database Migration / ডাটাবেস মাইগ্রেশন
+python manage.py makemigrations
+python manage.py migrate
+
+### Step 5: Run the Project / প্রজেক্ট চালু করো
+python manage.py runserver
+
+Browser-এ খোলো: http://127.0.0.1:8000/
+
+### Step 6: Make Changes & Push Updates / চেঞ্জ করে গিটহাবে আপডেট করো
+# কোডে চেঞ্জ করার পর
+git add .
+git commit -m "Updated AI prompt for better symptom handling"   # সুন্দর মেসেজ দাও
+git push
+
+### Step 7: Add Group Members (Collaborators) / গ্রুপ মেম্বার যোগ 
+1. Repository → Settings → Collaborators
+2. "Add people" ক্লিক করো
+3. তাদের গিটহাব ইউজারনেম দাও
+4. Permission: Write দাও (যাতে তারা কোড পুশ করতে পারে)
+5. Invite পাঠাও
+6. তারা Accept করলে কাজ শুরু করতে পারবে
+
+### Best Practices / সেরা অভ্যাস
+- সবসময় কাজ শুরু করার আগে `git pull` করো
+- Commit message স্পষ্ট রাখো (যেমন: "Fixed bug in blood donor search")
+- venv/ বা db.sqlite3 কখনো commit করো না (.gitignore-এ আছে)
+- API key কখনো commit করো না (views.py-এ লুকিয়ে রাখো)
+
+Last updated / শেষ আপডেট: February 04, 2026  
+Prepared by / : Bashir Alam

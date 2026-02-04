@@ -2,3 +2,9 @@ Set-ExecutionPolicy -ExecutionPolicy RemoteSigned -Scope Process
 .\venv\Scripts\activate
 python manage.py runserver
 https://openrouter.ai/settings/keys
+
+
+
+git add .
+git commit -m "Updated AI prompt for better symptom handling"
+git push
